@@ -1,4 +1,5 @@
 // require ('./bootstrap')
+import React from "react";
 import {App} from "@inertiajs/inertia-react";
 import {render} from "react-dom";
 import {InertiaProgress} from '@inertiajs/progress';

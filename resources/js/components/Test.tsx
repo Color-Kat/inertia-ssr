@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Test = () => {
-    return (<h1>test</h1>);
+const Test: React.FC = () => {
+    return (<div><h1>test</h1></div>);
 }
+
+export default Test;

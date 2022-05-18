@@ -1,6 +1,6 @@
 import React from 'react';
 import AppLayout from "@/Layouts/AppLayout";
-// import {Test} from "@";
+import Test from "@components/Test";
 import JetstreamDefault from "@/Jetstream/JetstreamDefault";
 
 const Dashboard: React.FC = () => {
@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
     return (
         <AppLayout header={
             <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                Главная
+                Главная {<Test></Test>}
             </h2>
         }>
             <div className="py-12">

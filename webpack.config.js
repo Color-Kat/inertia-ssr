@@ -3,7 +3,9 @@ const path = require('path');
 module.exports = {
     resolve: {
         alias: {
-            '@': path.resolve('resources/js'),
+            '@': path.resolve(__dirname, 'resources/js'),
+            '@components': path.resolve(__dirname, 'resources/js/components'),
         },
+        extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
     },
 };
