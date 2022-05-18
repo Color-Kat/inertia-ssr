@@ -11,7 +11,7 @@ import {CheckCircleIcon, SelectorIcon} from "@heroicons/react/outline";
 
 
 const AppLayout = (props) => {
-    const {user: authUser} = usePage().props
+    const {user: authUser} = usePage().props;
 
     const {canCreateTeams, managesProfilePhotos, hasApiFeatures, hasTeamFeatures} = usePage().props.jetstream
 
