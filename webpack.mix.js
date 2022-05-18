@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,12 +12,16 @@ const mix = require('laravel-mix');
  |
  */
 
-mix .js('resources/js/app.js', 'public/js')
+mix .ts('resources/js/app.js', 'public/js')
     .react()
     .postCss('resources/css/app.css', 'public/css',
         [require('tailwindcss')]
     )
     .webpackConfig(require('./webpack.config'))
+    .alias({
+        '@': path.join(__dirname, 'resources/js'),
+        '@components': path.join(__dirname, 'resources/js/components')
+    });
 
 if (mix.inProduction()) {
     mix.version();

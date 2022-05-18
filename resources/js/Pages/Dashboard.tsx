@@ -1,11 +1,14 @@
+import React from 'react';
 import AppLayout from "@/Layouts/AppLayout";
+// import {Test} from "@";
 import JetstreamDefault from "@/Jetstream/JetstreamDefault";
 
-const Dashboard = () => {
+const Dashboard: React.FC = () => {
+    const a: string = 'string';
     return (
         <AppLayout header={
             <h2 className="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+                Главная
             </h2>
         }>
             <div className="py-12">

@@ -14,11 +14,11 @@ const JetstreamDefault = () => {
                 </div>
 
                 <div className="mt-4 text-gray-500">
-                    Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application.
+                    Супер, робит. Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application.
                     Laravel is designed to help you build your application using a development environment that is
                     simple, powerful, and enjoyable. We believe you should love expressing your creativity through
                     programming, so we have spent time carefully crafting the Laravel ecosystem to be a breath of fresh
-                    air. We hope you love it.
+                    air. Ви-ви, We hope you love it.
                 </div>
             </div>
 
@@ -27,7 +27,7 @@ const JetstreamDefault = () => {
                     <div className="flex items-center">
                         <BookOpenIcon className="w-8 h-8 text-gray-400"/>
                         <div className="ml-4 text-gray-600 leading-7 font-semibold"><a
-                            href="https://laravel.com/docs">Documentation</a></div>
+                            href="https://laravel.com/docs">Документация</a></div>
                     </div>
 
                     <div className="ml-12">
