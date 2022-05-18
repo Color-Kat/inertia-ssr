@@ -2,10 +2,19 @@ const path = require('path');
 
 module.exports = {
     resolve: {
+        extensions: ['.tsx', '.ts', '.js', '.jsx'],
         alias: {
-            '@': path.resolve(__dirname, 'resources/js'),
-            '@components': path.resolve(__dirname, 'resources/js/components'),
-        },
-        extensions: ['*', '.js', '.jsx', '.vue', '.ts', '.tsx'],
+            '@': __dirname + '/resources/js',
+            '@components': __dirname + '/resources/js/components',
+        }
+    },
+    module: {
+        rules: [
+            {
+                test: /\.ts$/,
+                loader: 'ts-loader',
+                exclude: /node_module/
+            },
+        ],
     },
 };
