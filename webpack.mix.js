@@ -17,27 +17,8 @@ mix.ts('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css',
         [require('tailwindcss')]
     )
-    .webpackConfig(require('./webpack.config'));
-    // .webpackConfig({
-    //     resolve: {
-    //         extensions: [ '.tsx', '.ts', '.js', '.jsx' ],
-    //         alias: {
-    //             '@': __dirname + '/resources/js',
-    //             '@components': __dirname + '/resources/js/components',
-    //         }
-    //     },
-    //     module: {
-    //         rules: [
-    //             {
-    //                 test: /\.ts$/,
-    //                 loader: 'ts-loader',
-    //                 exclude: /node_module/,
-    //                 options: { appendTsSuffixTo: [/\.vue$/] }
-    //             },
-    //         ],
-    //     },
-    // });
-
+    .webpackConfig(require('./webpack.config'))
+    .browserSync()
 if (mix.inProduction()) {
     mix.version();
 }
