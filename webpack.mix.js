@@ -18,7 +18,16 @@ mix.ts('resources/js/app.js', 'public/js')
         [require('tailwindcss')]
     )
     .webpackConfig(require('./webpack.config'))
-    .browserSync()
+    .browserSync({
+        ui: {
+            port: 8080,
+            weinre
+        },
+        proxy: 'http://inertia-ssr.abr'
+    })
+
 if (mix.inProduction()) {
     mix.version();
+} else {
+    mix.sourceMaps();
 }
