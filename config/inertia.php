@@ -18,7 +18,8 @@ return [
 
     'ssr' => [
 
-        'enabled' => true,
+        // Include ssr only in production
+        'enabled' => !env('APP_DEBUG'),
 
         'url' => 'http://127.0.0.1:13714/render',
 
