@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const tailwindcss = require('tailwindcss');
 const path = require('path');
 
 /*
@@ -14,17 +15,12 @@ const path = require('path');
 
 mix.ts('resources/js/app.js', 'public/js')
     .react()
-    .postCss('resources/css/app.css', 'public/css',
-        [require('tailwindcss')]
-    )
-    .webpackConfig(require('./webpack.config'))
-    .browserSync({
-        ui: {
-            port: 8080,
-            weinre
-        },
-        proxy: 'http://inertia-ssr.abr'
+    .sass('resources/scss/app.scss', 'public/css')
+    .options({
+        postCss: [ tailwindcss('./tailwind.config.js') ]
     })
+    .webpackConfig(require('./webpack.config'))
+    .browserSync()
 
 if (mix.inProduction()) {
     mix.version();
