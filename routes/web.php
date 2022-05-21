@@ -27,3 +27,9 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
+
+Route::get('/my-page', function (){
+   return Inertia::render('MyPage', [
+       'server-foo' => 'bar'
+   ]);
+})->name('myPage');

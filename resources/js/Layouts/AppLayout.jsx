@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Inertia} from "@inertiajs/inertia";
 import {InertiaLink, usePage} from "@inertiajs/inertia-react";
 
@@ -26,10 +26,14 @@ const AppLayout = (props) => {
         },{preserveState: false})
     }
 
+    useEffect(()=>{
+        console.log('app layout')
+    }, []);
+
     return (
         <div>
             {/*<Banner/>*/}
-            <div className="min-h-screen bg-gray-100">
+            <div className="">
                 <nav className="bg-white border-b border-gray-100">
                     {/*<!-- Primary Navigation Menu -->*/}
                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,6 +50,10 @@ const AppLayout = (props) => {
                                 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                     <NavLink active={route().current('dashboard')} href={route('dashboard')}>
                                         Dashboard
+                                    </NavLink>
+
+                                    <NavLink active={route().current('myPage')} href={route('myPage')}>
+                                        MyPage
                                     </NavLink>
                                 </div>
                             </div>

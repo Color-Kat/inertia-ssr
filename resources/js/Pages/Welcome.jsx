@@ -1,4 +1,4 @@
-import {InertiaLink, usePage} from "@inertiajs/inertia-react";
+import {InertiaLink, Link, usePage} from "@inertiajs/inertia-react";
 import {AnnotationIcon, BookOpenIcon, CameraIcon, GlobeIcon, HeartIcon, ShoppingBagIcon} from "@/Icons";
 
 const Welcome = () => {
@@ -14,12 +14,17 @@ const Welcome = () => {
                         authUser
                             ?
                             <>
-                                <InertiaLink href={route('dashboard')} className="text-sm text-gray-700 underline">
+                                <Link href={route('dashboard')} className="text-sm text-gray-700 underline">
                                     Dashboard
-                                </InertiaLink>
+                                </Link>
+
+                                <Link  href={route('myPage')} className="ml-4 text-sm text-gray-700 underline">
+                                    MyPage
+                                </Link>
+
                                 <InertiaLink href={route('logout')} as="button" method="post"
                                              className="ml-4 text-sm text-gray-700 underline">
-                                    Logout
+                                    Выйти
                                 </InertiaLink>
                             </>
                             :

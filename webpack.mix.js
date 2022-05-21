@@ -20,7 +20,7 @@ mix.ts('resources/js/app.js', 'public/js')
         postCss: [ tailwindcss('./tailwind.config.js') ]
     })
     .webpackConfig(require('./webpack.config'))
-    .browserSync()
+    .browserSync('inertia-ssr.abr')
 
 if (mix.inProduction()) {
     mix.version();
