@@ -13,7 +13,7 @@ const path = require('path');
  |
  */
 
-mix.ts('resources/js/app.js', 'public/js')
+mix.ts('resources/js/app.tsx', 'public/js')
     .react()
     .sass('resources/scss/app.scss', 'public/css')
     .options({

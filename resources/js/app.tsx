@@ -6,25 +6,39 @@ import {InertiaProgress} from '@inertiajs/progress';
 import axios from "axios";
 import AppLayout from "@/Layouts/AppLayout";
 
-import {Ziggy} from "@/ziggy";
-import route from "ziggy-js";
 
 import Layout from "@/Layouts/Layout";
+import {IPage} from "@/types/iPage";
 
-window.axios = axios;
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+import {Ziggy} from "@/ziggy";
+const routeZiggy = require( "ziggy-js" );
+
+// declare global{
+//     namespace NodeJS {
+//         interface Global {
+//             // document: Document;
+//             // window: Window;
+//             // navigator: Navigator;
+//             route: (name?: string, params?: any, absolute?: any, config?: any) => any;
+//         }
+//     }
+// }
+
+// window.axios = axios;
+// window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 createInertiaApp({
-    resolve: name => {
+    resolve: (name: string) => {
         const page = require(`./Pages/${name}`).default;
+
         // Add default layout for all components
-        page.layout = page.layout || ((page) => <Layout children={page}/>) ;
+        (page as IPage).layout = page.layout || ((page) => <Layout children={page}/>) ;
 
         return page;
     },
     setup({ el, App, props }) {
         // Set global function route
-        global.route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
+        // global.route = (name: string, params: any, absolute: any, config = Ziggy) => routeZiggy(name, params, absolute, config);
 
         const root = createRoot(el);
         root.render(<App {...props} />);

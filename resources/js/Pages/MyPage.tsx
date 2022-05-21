@@ -1,27 +1,22 @@
 import React from "react";
-import {InertiaHead, InertiaLink, Link, Head} from "@inertiajs/inertia-react";
-import Layout from "@/Layouts/Layout";
-import AppLayout from "@/Layouts/AppLayout";
+import {Link, Head} from "@inertiajs/inertia-react";
 
 import {IPage} from "@/types/IPage";
-// import route from "ziggy-js";
-
+import AppLayout from "@/Layouts/AppLayout";
+import useRoute from "@/hooks/useRoute";
 
 
 const MyPage: IPage = () => {
+    const route = useRoute();
+
     return (
-        // <Layout>
-            <div>
-                <Link href="/">Main page</Link>
-            </div>
-        // </Layout>
+        <div>
+            <Link href={route('dashboard')}>Main page</Link>
+        </div>
     );
 }
 
-// (MyPage as any).layout = (page: any) => {
-//     <AppLayout children={page} title="myPage"/>
-// }
-
+// Change default layout
 MyPage.layout = page => <AppLayout children={page} />;
 
 export default MyPage;

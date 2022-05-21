@@ -1,5 +1,5 @@
 import React from "react";
 
 export interface IPage extends React.FC {
-    layout: (page: React.ReactNode) =>  JSX.Element;
+    layout?: (page: React.ReactNode) =>  JSX.Element;
 }
