@@ -9,11 +9,19 @@ import AppLayout from "@/Layouts/AppLayout";
 import {Ziggy} from "@/ziggy";
 import route from "ziggy-js";
 
+import Layout from "@/Layouts/Layout";
+
 window.axios = axios;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 createInertiaApp({
-    resolve: name => require(`./Pages/${name}`),
+    resolve: name => {
+        const page = require(`./Pages/${name}`).default;
+        // Add default layout for all components
+        page.layout = page.layout || ((page) => <Layout children={page}/>) ;
+
+        return page;
+    },
     setup({ el, App, props }) {
         // Set global function route
         global.route = (name, params, absolute, config = Ziggy) => route(name, params, absolute, config);
