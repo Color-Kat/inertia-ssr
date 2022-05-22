@@ -1,24 +1,31 @@
 import React from 'react';
 import {usePage} from "@inertiajs/inertia-react";
 import {Page} from "@inertiajs/inertia";
+import {IPaginator} from "@/types/IPaginator";
+import Pagination from "@components/Pagination";
 
-interface IPaginator {
-    total: number;
-    data: {
-        id: number;
-        name: string;
-        price: number;
-    }[];
-}
+// interface IPaginator {
+//     total: number;
+//     data: {
+//         id: number;
+//         name: string;
+//         price: number;
+//     }[];
+// }
 
 const Index: React.FC = () => {
-    const goods = usePage<Page<{ goods: IPaginator }>>().props.goods;
-    console.log(goods)
+    const goods = usePage<Page<{
+        goods: IPaginator<{
+            id: number,
+            name: string,
+            price: number
+        }>
+    }>>().props.goods;
 
     return (
-        <div>
+        <div className="h-screen relative w-full">
             {goods.total > 0
-                ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg h-screen">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                         <thead
                             className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -45,6 +52,8 @@ const Index: React.FC = () => {
                         })}
                         </tbody>
                     </table>
+
+                    <Pagination paginator={goods} />
                 </div>
                 : <div>
                     Товаров нема

@@ -7,9 +7,6 @@ import useRoute from "@/hooks/useRoute";
 const Layout: React.FC<any> = (props) => {
     const route = useRoute();
 
-    useEffect(()=>{
-        console.log('app layout')
-    }, []);
 
     return (
         <div>

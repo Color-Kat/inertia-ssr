@@ -1,4 +1,4 @@
-import route, {Config, RouteParam, RouteParamsWithQueryOverload} from "ziggy-js";
+import route, {RouteParam, RouteParamsWithQueryOverload} from "ziggy-js";
 import {Ziggy} from "@/ziggy";
 
 const useRoute = () => {

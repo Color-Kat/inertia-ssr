@@ -17,7 +17,7 @@ class GoodController extends Controller
     {
         return Inertia::render('Goods/Index', [
             'title' => 'Goods',
-            'goods' => Good::paginate(5)
+            'goods' => Good::paginate(3)
         ]);
     }
 
