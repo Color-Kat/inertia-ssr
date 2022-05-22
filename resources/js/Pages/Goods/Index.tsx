@@ -18,25 +18,27 @@ const Index: React.FC = () => {
     return (
         <div>
             {goods.total > 0
-                ? <div>
-                    <table className="table-auto">
-                        <thead>
+                ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead
+                            className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Control</th>
+                            <th scope="col" className="px-6 py-3">Id</th>
+                            <th scope="col" className="px-6 py-3">Name</th>
+                            <th scope="col" className="px-6 py-3">Price</th>
+                            <th scope="col" className="px-6 py-3">Control</th>
                         </tr>
                         </thead>
                         <tbody>
                         {goods.data.map(good => {
                             return (
-                                <tr>
-                                    <td>{good.id}</td>
-                                    <td>{good.name}</td>
-                                    <td>{good.price}</td>
-                                    <td>
-                                        <button className="bg-green-600">Create</button>
+                                <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700" key={good.id}>
+                                    <td className="px-6 py-4">{good.id}</td>
+                                    <td scope="row"
+                                        className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{good.name}</td>
+                                    <td className="px-6 py-4">{good.price}</td>
+                                    <td className="px-6 py-4">
+                                        <button className="bg-green-600 text-white p-2 px-3 rounded-md">Create</button>
                                     </td>
                                 </tr>
                             );
