@@ -8,6 +8,7 @@
         "prod": "npm run production",
         "production": "mix --production",
         "watch": "mix watch",
+        "routes": "php artisan ziggy:generate",
         "ssr": "mix watch --mix-config=webpack.ssr.mix.js",
         "ssr-serve": "php artisan ziggy:generate && node public/js/ssr.js"
     },

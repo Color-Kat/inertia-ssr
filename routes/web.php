@@ -22,7 +22,7 @@ Route::get('/', function () {
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name('home');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -33,3 +33,5 @@ Route::get('/my-page', function (){
        'server-foo' => 'bar'
    ]);
 })->name('myPage');
+
+Route::resource('goods', \App\Http\Controllers\GoodController::class)->names('goods');

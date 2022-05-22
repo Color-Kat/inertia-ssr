@@ -3,7 +3,6 @@ import {createRoot} from 'react-dom/client';
 import {createInertiaApp} from "@inertiajs/inertia-react";
 import {InertiaProgress} from '@inertiajs/progress';
 
-
 import Layout from "@/Layouts/Layout";
 import {IPage} from "@/types/iPage";
 
@@ -25,6 +24,7 @@ createInertiaApp({
         const root = createRoot(el);
         root.render(<App {...props} />);
     },
+
 });
 
 // Init progress bar for loadings
