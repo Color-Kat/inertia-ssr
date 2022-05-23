@@ -19,8 +19,8 @@ mix.ts('resources/js/app.tsx', 'public/js')
     .options({
         postCss: [ tailwindcss('./tailwind.config.js') ]
     })
-    .webpackConfig(require('./webpack.config'))
-    .browserSync();
+    .browserSync()
+    .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
     mix.version();

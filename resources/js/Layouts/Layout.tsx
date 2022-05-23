@@ -10,27 +10,28 @@ const Layout: React.FC<any> = (props) => {
 
     return (
         <div>
-            <header>
-                <nav>
-
-                    <ul className='flex w-1/3 justify-between'>
-                        <li>
+            <header className='flex justify-center bg-gray-200 py-3 px-2 mb-2'>
+                <nav className='container'>
+                    <ul className='flex w-full justify-between'>
+                        <li className="mx-1">
                             <InertiaLink href={route('home')}>Home</InertiaLink>
                         </li>
-                        <li>
+                        <li className="mx-1">
                             <InertiaLink href={route('dashboard')}>Dashboard</InertiaLink>
                         </li>
-                        <li>
+                        <li className="mx-1">
                             <InertiaLink href={route('myPage')}>My page</InertiaLink>
                         </li>
-                        <li>
+                        <li className="mx-1">
                             <InertiaLink href={route('goods.index')}>Goods</InertiaLink>
                         </li>
                     </ul>
                 </nav>
             </header>
-            <main>
-                {props.children}
+            <main className="flex justify-center w-full  px-2">
+                <div className='container'>
+                    {props.children}
+                </div>
             </main>
         </div>
     )

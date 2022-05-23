@@ -5,15 +5,6 @@ import {IPaginator} from "@/types/IPaginator";
 import Pagination from "@components/Pagination";
 import useRoute from "@/hooks/useRoute";
 
-// interface IPaginator {
-//     total: number;
-//     data: {
-//         id: number;
-//         name: string;
-//         price: number;
-//     }[];
-// }
-
 const Index: React.FC = () => {
     const route = useRoute();
 
@@ -36,6 +27,10 @@ const Index: React.FC = () => {
 
     return (
         <div className="h-screen relative w-full">
+            <div className="addGood">
+                <Link className="bg-green-500 rounded-md py-2 px-2 text-white my-2" href={route('goods.create')} type="button">Добавить товар</Link>
+            </div>
+
             {goods.total > 0
                 ? <div className="relative overflow-x-auto shadow-md sm:rounded-lg h-screen">
                     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
