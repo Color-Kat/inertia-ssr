@@ -23,6 +23,9 @@ const Layout: React.FC<any> = (props) => {
                         <li>
                             <InertiaLink href={route('myPage')}>My page</InertiaLink>
                         </li>
+                        <li>
+                            <InertiaLink href={route('goods.index')}>Goods</InertiaLink>
+                        </li>
                     </ul>
                 </nav>
             </header>

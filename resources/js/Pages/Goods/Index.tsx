@@ -1,8 +1,9 @@
-import React from 'react';
-import {usePage} from "@inertiajs/inertia-react";
-import {Page} from "@inertiajs/inertia";
+import React, {useEffect} from 'react';
+import {Link, usePage} from "@inertiajs/inertia-react";
+import {Page, Inertia} from "@inertiajs/inertia";
 import {IPaginator} from "@/types/IPaginator";
 import Pagination from "@components/Pagination";
+import useRoute from "@/hooks/useRoute";
 
 // interface IPaginator {
 //     total: number;
@@ -14,6 +15,8 @@ import Pagination from "@components/Pagination";
 // }
 
 const Index: React.FC = () => {
+    const route = useRoute();
+
     const goods = usePage<Page<{
         goods: IPaginator<{
             id: number,
@@ -21,6 +24,15 @@ const Index: React.FC = () => {
             price: number
         }>
     }>>().props.goods;
+    const all = usePage();
+
+    useEffect(()=>{
+        console.log(all);
+    });
+
+    const deleteGood = (id: number) => {
+        Inertia.delete(route('goods.destroy', id));
+    }
 
     return (
         <div className="h-screen relative w-full">
@@ -45,7 +57,13 @@ const Index: React.FC = () => {
                                         className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{good.name}</td>
                                     <td className="px-6 py-4">{good.price}</td>
                                     <td className="px-6 py-4">
-                                        <button className="bg-green-600 text-white p-2 px-3 rounded-md">Create</button>
+                                        <button
+                                            className="bg-blue-500 rounded-md py-2 px-2 text-white mr-1">Редактировать
+                                        </button>
+                                        <button
+                                            onClick={() => deleteGood(good.id)}
+                                            className="bg-red-500 rounded-md py-2 px-2 text-white">Удалить
+                                        </button>
                                     </td>
                                 </tr>
                             );
@@ -53,7 +71,7 @@ const Index: React.FC = () => {
                         </tbody>
                     </table>
 
-                    <Pagination paginator={goods} />
+                    <Pagination paginator={goods}/>
                 </div>
                 : <div>
                     Товаров нема
