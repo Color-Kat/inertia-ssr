@@ -52,9 +52,11 @@ const Index: React.FC = () => {
                                         className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">{good.name}</td>
                                     <td className="px-6 py-4">{good.price}</td>
                                     <td className="px-6 py-4">
-                                        <button
+                                        <Link
+                                            type="button"
+                                            href={route('goods.edit', good.id)}
                                             className="bg-blue-500 rounded-md py-2 px-2 text-white mr-1">Редактировать
-                                        </button>
+                                        </Link>
                                         <button
                                             onClick={() => deleteGood(good.id)}
                                             className="bg-red-500 rounded-md py-2 px-2 text-white">Удалить

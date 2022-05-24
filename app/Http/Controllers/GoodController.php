@@ -65,23 +65,32 @@ class GoodController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param int $id
-     * @return \Illuminate\Http\Response
+     * @return \Inertia\Response
      */
     public function edit($id)
     {
-        //
+        return Inertia::render('Goods/Edit', [
+            'title' => 'Edit good',
+            'good' => Good::select('id', 'name', 'price')->find($id)
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param int $id
-     * @return \Illuminate\Http\Response
+     * @param Good $good
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
-        //
+        $good = Good::find($id);
+
+        $good->update(
+            $request->all()
+        );
+
+        return redirect()->route('goods.index');
     }
 
     /**

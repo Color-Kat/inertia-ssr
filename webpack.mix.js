@@ -19,11 +19,11 @@ mix.ts('resources/js/app.tsx', 'public/js')
     .options({
         postCss: [ tailwindcss('./tailwind.config.js') ]
     })
-    .browserSync()
+    .browserSync({proxy: 'http://inertia-ssr.abr/'})
     .webpackConfig(require('./webpack.config'));
 
 if (mix.inProduction()) {
     mix.version();
 } else {
-    mix.sourceMaps();
+    // mix.sourceMaps();
 }
