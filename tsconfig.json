@@ -8,9 +8,8 @@
         "allowJs": true,
         "esModuleInterop": true,
         "noImplicitAny": true,
-
         //        "skipLibCheck": true,
-//        "forceConsistentCasingInFileNames": true,
+        //        "forceConsistentCasingInFileNames": true,
 
 
         /* Projects */
@@ -47,12 +46,12 @@
             "@components/*": [
                 "components/*"
             ]
-        },
+        }
         /* Specify a set of entries that re-map imports to additional lookup locations. */
 
         //        "include": [
-//            "resources/js/**/*"
-//        ],
+        //            "resources/js/**/*"
+        //        ],
 
         // Frontend paths pattern
         // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */
@@ -64,7 +63,7 @@
 
         /* JavaScript Support */
         /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */
-//         "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
+        //         "checkJs": true,                                  /* Enable error reporting in type-checked JavaScript files. */
         // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from `node_modules`. Only applicable with `allowJs`. */
 
         /* Emit */

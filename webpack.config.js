@@ -5,6 +5,7 @@ module.exports = {
         extensions: ['.tsx', '.ts', '.js', '.jsx'],
         alias: {
             '@': __dirname + '/resources/js',
+            '@hooks': __dirname + '/resources/js/hooks',
             '@components': __dirname + '/resources/js/components',
         }
     },
